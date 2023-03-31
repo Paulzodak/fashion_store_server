@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/users.js";
+import multer from "multer";
 const app = express();
 dotenv.config();
 app.use(express.json({ extended: true }));

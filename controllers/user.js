@@ -39,6 +39,7 @@ export const fetchUser = async (req, res) => {
           fullname: user.fullname,
           password: passwordIsValid,
           email: user.email,
+          imageUrl: user.imageUrl,
         },
         "secretadgjl13579"
       );
