@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import User from "../models/users.js";
+import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { iCloudinary } from "../utils/cloudinary.js";
