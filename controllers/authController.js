@@ -46,10 +46,15 @@ export const login = async (req, res) => {
       );
       console.log(token);
 
-      return res.json({ status: "ok", user: token });
+      return res.status(201).json({ status: "ok", user: token });
+    } else {
+      return res
+        .status(400)
+        .json({ status: "error", body: "password incorrect" });
     }
   } else {
-    res.json({ status: "error", user: false, body: "password incorrect" });
+    // res.status(409).json({ message: "invalid" });
+    return res.status(400).json({ status: "error", body: "Error" });
   }
 };
 //

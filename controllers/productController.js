@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import Product from "../models/product.js";
 export const createProduct = async (req, res) => {
+  console.log(req.body);
   const product = new Product({
     productName: req.body.productName,
     productCategory: req.body.productCategory,
@@ -10,6 +11,7 @@ export const createProduct = async (req, res) => {
     productPurpose: req.body.productPurpose,
     productDou: req.body.productDou,
     productIngredients: req.body.productIngredients,
+    productImages: req.body.productImages,
   });
   try {
     await product.save();
@@ -27,6 +29,6 @@ export const fetchAllProducts = async (req, res) => {
     console.log(products);
     return res.json({ status: "ok", products: products });
   } else {
-    res.json({ status: "error", user: false, body: "password incorrect" });
+    res.json({ status: "error", user: false, body: "error" });
   }
 };
